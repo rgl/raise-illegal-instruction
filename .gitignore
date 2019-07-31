@@ -1,0 +1,5 @@
+bin/
+obj/
+/opencover-report.xml
+*.dll
+*.exe
