@@ -1,0 +1,12 @@
+build:
+  stage: build
+  tags:
+    - windows
+    - shell
+  script:
+    # see https://www.msys2.org/docs/ci/#other-systems
+    - |
+      $env:MSYSTEM = 'MINGW64'
+      $env:MSYS2_PATH_TYPE = 'inherit'
+      $env:CHERE_INVOKING = 'yes'
+      C:/tools/msys64/usr/bin/bash -lc make

@@ -1,0 +1,19 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.101'
+      - name: Setup msys2
+        uses: msys2/setup-msys2@v2
+        with:
+          install: make
+          path-type: inherit
+      - name: Build
+        run: msys2 -c make

@@ -1,5 +1,6 @@
 bin/
 obj/
+TestResults/
 /opencover-report.xml
 *.dll
 *.exe
